@@ -1,0 +1,22 @@
+el fichero(index.html) lo he creado en el Server(máquina SERVIDOR)
+también hay que crear un ftp con un nombre distinto
+
+al crear el ftp tiene que ser sin SSL
+ifmp regla de exclusion
+
+Filezilla:
+instalarla en máquina CLIENTE para poder transferir archivos al SERVIDOR y al modificar un html se pueda ver en la mñaquina SERVIDOR.
+
+máquina virtual SERVIDOR: (contraseña: servidor) 
+(no hace falta ingresar el puerto al hacer la prueba en Filezilla)
+modo pasivo: 22
+modo activo: el server me asigna un puerto por si el 22 ya está cogido
+
+CONVERSIÓN DEL DNS
+cambiar el dns(para entrar con el nombre de la página en lugar del ip) en la máquina CLIENTE porque es en la máquina donde quiero ver el sitio web del sevidor
+
+el IIS se abre en la máquina de servidor
+
+la máquina UBUNTU funcionaría como otro cliente (contraseña: 1234)
+
+Para buscar mi página index en la URL y buscarla con el nombre de mi página web en lugar de mi IP, debo modificar el fichero etc/hosts: (número IP) www.empresa_KSA.es
