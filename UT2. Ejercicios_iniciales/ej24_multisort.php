@@ -1,24 +1,4 @@
-<!-- 
-Crear un array bidimensional asociativo en el que la clave de la primera dimensión será
-el nombre de los aEquipos de la primera división de la liga de fútbol. 
-Cada equipo contendrá un array de dos elementos, el primero, con clave “puntos” contiene la
-puntuación obtenida en la pasada liga. El segundo elemento con clave “posición”
-contendrá en número la posición en la tabla en la que finalizó el equipo la liga.
-* Utilizando los bucles que necesites muestra en pantalla los nombres de los aEquipos, los
-puntos y la posición de los aEquipos que terminaron en las tres primeras posiciones de la
-liga.
-* Creo el array desordenado 
--->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fútbol</title>
-
-    <?php
+<?php
     $aEquipos = array("Real Madrid" => array("puntos"=>87,"posicion"=>1),
                   "Villareal" => array("puntos"=>60,"posicion"=>5),
                   "Celta de Vigo" => array("puntos"=>36,"posicion"=>17),
@@ -40,12 +20,12 @@ liga.
                   "RCD MAllorca" => array("puntos"=>25,"posicion"=>19),
                   "Eibar" => array("puntos"=>42,"posicion"=>14)
     );
-    ?>
-</head>
 
-<body>
-<?php
-echo "<b>Datos sin ordenar</b><br><br>";
+echo "<b>Datos Ordenados por posición</b><br><br>";
+// Al utilizar el array_multisort se ordena el nombre del equipo
+$auxiliar = array_column($aEquipos,"posicion");//creo un array para almacenar la columna de la posición equipo
+array_multisort($auxiliar, SORT_ASC, $aEquipos); //array_multisort ordena el 2do array en función del 1ero según el criterio ASC O DESC
+//
 foreach($aEquipos as $equipo=>$datos){
     
     if($aEquipos[$equipo]["posicion"]<4){
@@ -56,32 +36,7 @@ foreach($aEquipos as $equipo=>$datos){
             
             echo "<li>$clave : $valor</li>";
         }
+    echo "<br><br>";
+
 }
-
-    // echo "Datos sin ordenar";
-
-    // // foreach($aaEquipos as $clave => $datos){
-    // //     echo "Equipo: " . $clave , " Puntos: " . $valor["puntos"] , " Posición: " . $valor["posicion"] . "<br>";
-    // // }
-
-    // foreach($aaEquipos as $clave => $datos){
-    //     if ($datos["posicion"]<=3){
-    //         $aux[$datos["posicion"]] = array($nombreEquipo , $datos["puntos"]);
-    //     }
-    // }
-
-    // echo "<pre>";
-    // print_r ($aux);
-    // echo "</pre>";
-
-    // ksort($aux);
-
-    // echo "Datos ordenados usando array auxiliar";
-
-
-
-//ksort
-//multisort
-?>
-</body>
-</html>
+    ?>

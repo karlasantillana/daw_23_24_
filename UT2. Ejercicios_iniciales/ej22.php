@@ -26,10 +26,14 @@ pantalla los nombres y el nuevo salario de los que han sufrido modificaciones.
     <title>Document</title>
 
 <?php
+    // foreach($empleado as $cod_empleado => $datos){
+    //     nuevo_salario($datos["nombre"] , $datos["edad"] , $datos["salario"]);
+    //         function nuevo_salario($nombre, $edad, $salario){
 
-    // function nuevo_salario ($nombre , $edad , $salario){
-    //     if 
+    //         }
+    
     // }
+
 
 
 ?>
