@@ -2,8 +2,15 @@
 Crea una pequeña agenda electrónica utilizando arrays asociativos multidimensionales.
 Los datos a guardar para cada contacto son: nombre, apellidos, teléfono, correo
 electrónico.
-Debe mostrarse en pantalla los datos guardados en la agenda 
+Debe mostrarse en pantalla los datos guardados en la agenda.
+
+*Crea una función de usuario que reciba el correo electrónico de cada contacto de la
+agenda que devuelva true si el correo termina en “@gmail.com”, “@educa.madrid.org”,
+“@yahoo.com” o “@hotmail.com” y false en caso contrario.
+*Mostrar en pantalla una lista con los nombres y correo electrónico de los correos no
+válidos.
 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,22 +40,42 @@ Debe mostrarse en pantalla los datos guardados en la agenda
                                 'Correo'=>'susana@correo.com')
         );
 
-        echo "<pre>";
-        print_r ($agenda);
-        echo "</pre>";
+        // echo "<pre>";
+        // print_r ($agenda);
+        // echo "</pre>";
+
+        echo "<table>
+                    <tr>
+                        <th>agenda</th>
+                    </tr>
+
+                    <tr>
+                        <td>clave</td>
+                        <td>clave</td>
+                        <td>contenido</td>
+                    </tr>"
+            foreach($agenda).
+            
+            "</table>";
+
 
         echo "------------------------------------<br>";
         echo "<b>Lista de correos no válidos</b><br>";
         echo "------------------------------------<br>";
 
-        //función recursiva
+        function comprobarEmail($correo){
+            $encontrado=false;
+
+            if(str_ends_with($correo, '@gmail.com')||str_ends_with($correo, '@educa.madrid.org')||str_ends_with($correo, '@yahoo.com')||str_ends_with($correo, '@hotmail.com')){
+                $encontrado=true;
+            }
+            return $encontrado;
+        }
+       
         foreach($agenda as $contacto=>$datos){
-            if(in_array('@gmail.com'|'@educa.madrid.org'|'@yahoo.com'|'@hotmail.com', array_column($agenda, 'Correo'))){
-                foreach($agenda[$contacto] as $clave=>$contenido)
-                echo ""
-                echo "Encontrado correo/s con ese dominio";
-            }else
-                echo "No encontrado correo/s con ese dominio";
+            if(comprobarEmail($datos['Correo'])==false){
+                echo $datos['Nombre'] . ": " . $datos["Correo"] . "<br>";
+            }
         }
 
     ?>
