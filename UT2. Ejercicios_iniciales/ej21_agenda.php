@@ -54,7 +54,12 @@ válidos.
                         <td>clave</td>
                         <td>contenido</td>
                     </tr>"
-            foreach($agenda).
+            foreach($agenda as $a => $b){
+                echo "<tr>
+                        <td>$a</td>";
+                foeach($agenda[$a])
+                </tr>"
+            }.
             
             "</table>";
 
