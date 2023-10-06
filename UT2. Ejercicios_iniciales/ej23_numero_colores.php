@@ -28,16 +28,43 @@ Utiliza funciones de usuario.
 
     foreach($lista as $valor){
         if($valor%2 ==0){
-            echo "$valor <br>";
+            echo "<span style='color:green'>$valor </span><br>";
         }else{
-            echo "$valor <br>";
+            echo "<span style='color:red'>$valor <br>";
         }
     }
 
     echo "<br>";
+    echo "Los números repetidos son: <br>";
+    echo imprimir($lista_repetidos). "<br>";
+    
+    //1ºforma/
+    // function imprimir($lista){
+    //     foreach($lista as $listita){
+    //         echo "$listita ";
+    //     }
+    // }
 
+
+    //2ºforma/
+        function imprimir($lista_repetidos){
+            foreach($lista_repetidos as $valor_rep){
+                echo "$valor_rep ";
+            }
+        }
+
+    //3ºforma
+    //echo implode(" " , array_count_values($lista_repetidos));
+
+    //4ºforma
+    function veces($lista_repetidos , $valor_rep){
+        $contadores = array_count_values($lista_repetidos);
+        return $contadores =[$valor_rep];
+    }
 
     echo "<pre>";
     print_r($lista);
     echo "</pre>";
 ?>
+
+<!-- https://es.stackoverflow.com/questions/31480/contar-veces-que-se-repite-un-elemento-en-una-arreglo-con-php -->
