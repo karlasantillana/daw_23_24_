@@ -3,10 +3,42 @@ Crear un array de 20 elementos que contenga números aleatorios entre 1 y 30 sin
 repetir. 
 *Mostrarlo en pantalla ordenado descendentemente. 
 *Los números impares se mostrarán en color rojo y los pares en color verde. 
-*Mostrar en pantalla cuántos números salieron repetidos al generar el array y cuáles fueron.
+*Mostrar en pantalla cuántos números salieron repetidos al generar el array y cuáles fueron y cuántas veces se repitieron.
 Utiliza funciones de usuario. 
 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
+    <?php
+        //1ºforma/
+        function contar_valores_rep($lista_repetidos , $lista){
+            $i=0;
+            foreach($lista_repetidos as $valor_rep){
+                if($lista==$valor_rep)
+                $i++;
+                echo "El número $valor_rep ha salido $i veces.<br>";
+            }
+        }
+    
+        //2ºforma
+        // echo implode(" " , array_count_values($lista_repetidos));
+    
+    
+        //3ºforma
+        // function veces($lista_repetidos , $valor_rep){
+        //     $contadores = array_count_values($lista_repetidos);
+        //     return $contadores =[$valor_rep];
+        // }
+    ?>
+</head>
+<body>
+    
+</body>
+</html>
 <?php
     $lista = array();
     $lista_repetidos = array();
@@ -26,45 +58,24 @@ Utiliza funciones de usuario.
     //ordenar array de forma descendente
     arsort($lista);
 
+    echo "Han salido los siguientes números:<br><br>";
+
     foreach($lista as $valor){
         if($valor%2 ==0){
             echo "<span style='color:green'>$valor </span><br>";
         }else{
-            echo "<span style='color:red'>$valor <br>";
+            echo "<span style='color:red'>$valor </span><br>";
         }
     }
-
     echo "<br>";
-    echo "Los números repetidos son: <br>";
-    echo imprimir($lista_repetidos). "<br>";
-    
-    //1ºforma/
-    // function imprimir($lista){
-    //     foreach($lista as $listita){
-    //         echo "$listita ";
-    //     }
-    // }
+    echo "Ha habido un total de "  . count($lista_repetidos) . " números repetidos. <br><br>";
+
+    echo "Los números repetidos han sido: <br><br>";
+    echo contar_valores_rep($lista_repetidos, $lista). "<br>";
 
 
-    //2ºforma/
-        function imprimir($lista_repetidos){
-            foreach($lista_repetidos as $valor_rep){
-                echo "$valor_rep ";
-            }
-        }
-
-    //3ºforma
-    //echo implode(" " , array_count_values($lista_repetidos));
-
-    //4ºforma
-    function veces($lista_repetidos , $valor_rep){
-        $contadores = array_count_values($lista_repetidos);
-        return $contadores =[$valor_rep];
-    }
 
     echo "<pre>";
     print_r($lista);
     echo "</pre>";
 ?>
-
-<!-- https://es.stackoverflow.com/questions/31480/contar-veces-que-se-repite-un-elemento-en-una-arreglo-con-php -->
