@@ -71,7 +71,7 @@ class Alumno{
     }
 }
 
-//OBJETOS CREADOS EN "principal.php"
+//OBJETOS(instancias) CREADOS EN "principal.php"
 
 
 ?>

@@ -13,6 +13,12 @@ Utiliza funciones de usuario.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Números Colores</title>
 
+    <style>
+        table,td{
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+    </style>
     <?php
         //1ºforma/
         function contar_valores_rep($lista_repetidos , $lista){
@@ -55,19 +61,25 @@ Utiliza funciones de usuario.
         }
     }
 
+
     //*Ordenar array de forma descendente
     arsort($lista);
 
     echo "Han salido los siguientes números:<br><br>";
-
+    echo "<table><tr>";
     //*Los números impares se mostrarán en color rojo y los pares en color verde
-    foreach($lista as $valor){
+    foreach($lista as $clave => $valor){
+        echo "<td>$clave</td></tr>";
+        echo "<tr>";
         if($valor%2 ==0){
-            echo "<span style='color:green'>$valor </span><br>";
+            echo "<td><span style='color:green'>$valor </span></td>";
         }else{
-            echo "<span style='color:red'>$valor </span><br>";
+            echo "<td><span style='color:red'>$valor </span></td>";
         }
+
     }
+    echo "</tr></table>";
+
 
     echo "<br>";
     echo "Ha habido un total de "  . count($lista_repetidos) . " números repetidos. <br><br>";
