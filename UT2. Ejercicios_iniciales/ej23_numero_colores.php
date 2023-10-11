@@ -15,11 +15,14 @@ Utiliza funciones de usuario.
 
     <style>
         table,td{
-            border: 1px solid;
+            border: 1px black solid;
             border-collapse: collapse;
+            padding: 8px;
         }
     </style>
+    <?php
 
+    ?>
 </head>
 <body>
     
@@ -30,7 +33,7 @@ Utiliza funciones de usuario.
     $lista_repetidos = array();
     $contador = 0;
 
-    //Números aleatorios
+    //lista de números
     while($contador<20){
         $num = rand(1,30);
 
@@ -47,28 +50,34 @@ Utiliza funciones de usuario.
     arsort($lista);
 
     echo "Han salido los siguientes números:<br><br>";
+    
+    //Clave del número en lista y tabla (1ªfila)
     echo "<table><tr>";
-
-    //*Números colores y tabla
     foreach($lista as $clave => $valor){
-        echo "<td>$clave</td></tr>";
-        echo "<tr>";
-        if($valor%2 ==0){
-            echo "<td><span style='color:green'>$valor </span></td>";
-        }else{
-            echo "<td><span style='color:red'>$valor </span></td>";
-        }
+        echo "<td>" .$clave ."</td>";
+    }
+    echo "</tr><tr>";
 
+    //*Números en colores y tabla (2ªfila)
+    foreach($lista as $valor){
+        echo "<td>";
+        if($valor%2 ==0){
+            echo "<span style='color:green'>$valor </span>";
+        }else{
+            echo "<span style='color:red'>$valor </span>";
+        }
+        echo "</td>";
     }
     echo "</tr></table>";
 
 
     echo "<br>";
-    //Contabilizar números repetidos
+    //Contar números repetidos
     echo "Ha habido un total de "  . count($lista_repetidos) . " números repetidos. <br><br>";
 
     echo "Los números repetidos han sido: <br><br>";
 
+    //Repeticiones de cada número repetido
     foreach($lista_repetidos as $key=>$value){
         if($value>1){
             echo "El número $key ha salido $value veces.<br>";

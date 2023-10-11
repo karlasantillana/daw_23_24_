@@ -1,0 +1,23 @@
+1ºforma/
+        function contar_valores_rep($lista_repetidos , $lista){
+            $i=0;
+            foreach($lista_repetidos as $valor_rep){
+                if($lista==$valor_rep)
+                $i++;
+                echo "El número $valor_rep ha salido $i veces.<br>";
+            }
+        }
+        
+    
+        3ºforma
+        function veces($lista_repetidos , $valor_rep){
+            $contadores = array_count_values($lista_repetidos);
+            return $contadores =[$valor_rep];
+        }
+
+        
+        
+echo contar_valores_rep($lista_repetidos, $lista). "<br>";
+
+//2ºforma
+// echo implode(" " , array_count_values($lista_repetidos));
