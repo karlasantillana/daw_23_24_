@@ -2,6 +2,7 @@
 
 include "alumno.php";
 
+
 //creo objeto
 $alumno = new Alumno("Paco" , "Pérez");
 echo $alumno->datosAlumno();
@@ -10,7 +11,7 @@ echo "<br>---------------------------<br>";
 
 // echo "Soy el alumno " . $alumno->nombre;
 echo "Soy el alumno " . $alumno->apellido;
-echo " Nombre " . $alumno->getNombre();
+echo " " . $alumno->getNombre();
 
 echo "<br>---------------------------<br>";
 

@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Alumno DAW</title>
+
+    <style>
+        table, td{
+            border: 1px solid;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+</body>
+</html>
 <?php
 
 class Alumno{
@@ -34,7 +55,10 @@ class Alumno{
     }
 
     function datos_alumno_id(){
-        return "Alumno. " . $this->nombre . " " . $this->apellido . " ID= " . self::$id . "<br>";
+        return "<table> <tr><td>Alumno</td>" 
+                    . "<td>" . $this->nombre . "</td> 
+                    <td>" . $this->apellido . "</td>
+                    <td>" . "ID= " . self::$id . "</td></tr></table>";
     }
 
     //getter y setter
