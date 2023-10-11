@@ -49,7 +49,7 @@ Utiliza funciones de usuario.
     //*Ordenar array de forma descendente
     arsort($lista);
 
-    echo "Han salido los siguientes números:<br><br>";
+    echo "Han salido los siguientes números (Posición y número):<br><br>";
     
     //Clave del número en lista y tabla (1ªfila)
     echo "<table><tr>";
