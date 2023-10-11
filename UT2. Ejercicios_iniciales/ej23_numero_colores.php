@@ -19,27 +19,7 @@ Utiliza funciones de usuario.
             border-collapse: collapse;
         }
     </style>
-    <?php
-        //1ºforma/
-        function contar_valores_rep($lista_repetidos , $lista){
-            $i=0;
-            foreach($lista_repetidos as $valor_rep){
-                if($lista==$valor_rep)
-                $i++;
-                echo "El número $valor_rep ha salido $i veces.<br>";
-            }
-        }
-    
-        //2ºforma
-        // echo implode(" " , array_count_values($lista_repetidos));
-    
-    
-        //3ºforma
-        // function veces($lista_repetidos , $valor_rep){
-        //     $contadores = array_count_values($lista_repetidos);
-        //     return $contadores =[$valor_rep];
-        // }
-    ?>
+
 </head>
 <body>
     
@@ -50,6 +30,7 @@ Utiliza funciones de usuario.
     $lista_repetidos = array();
     $contador = 0;
 
+    //Números aleatorios
     while($contador<20){
         $num = rand(1,30);
 
@@ -67,7 +48,8 @@ Utiliza funciones de usuario.
 
     echo "Han salido los siguientes números:<br><br>";
     echo "<table><tr>";
-    //*Los números impares se mostrarán en color rojo y los pares en color verde
+
+    //*Números colores y tabla
     foreach($lista as $clave => $valor){
         echo "<td>$clave</td></tr>";
         echo "<tr>";
@@ -82,12 +64,17 @@ Utiliza funciones de usuario.
 
 
     echo "<br>";
+    //Contabilizar números repetidos
     echo "Ha habido un total de "  . count($lista_repetidos) . " números repetidos. <br><br>";
 
     echo "Los números repetidos han sido: <br><br>";
-    echo contar_valores_rep($lista_repetidos, $lista). "<br>";
 
-
+    foreach($lista_repetidos as $key=>$value){
+        if($value>1){
+            echo "El número $key ha salido $value veces.<br>";
+        }
+    }
+    
     // echo "<pre>";
     // print_r($lista);
     // echo "</pre>";
