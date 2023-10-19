@@ -10,8 +10,8 @@
     <h1>Gestión de alumnos</h1>
     <ul>
         <li><a href="insertar.php">Dar de alta</a></li>
-        <li>Dar de baja</li>
-        <li>Buscar</li>
+        <li><a href="borrar.php">Dar de baja</a></li>
+        <li><a href="buscar.php">Buscar</a></li>
         <li>Modificar</li>
     </ul>
 </body>

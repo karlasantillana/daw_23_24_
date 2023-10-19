@@ -17,7 +17,7 @@
     <h1>Alta de alumnos</h1>
     <form action="" method="post">
         <fieldset>
-            <legend>Dtos del alumno</legend>
+            <legend>Datos del alumno</legend>
             Nombre del alumno:
             <input type="text" name="nombre" required><br><br>
             Apellidos del alumno:
@@ -29,6 +29,8 @@
             <input type="submit" name="btnEnviar" value="Dar de alta">
         </fieldset>  
     </form>
+
+    <h4><a href="principal.php">VOLVER AL MENÚ CRUD</a></h4>
 
     <?php
             //*********Conexión a bbdd on Mysql********************* */
@@ -42,12 +44,13 @@
     //Corroborar que llegan los datos con isset
     if(isset($_REQUEST['btnEnviar'])){
         try{
-            $conexion = new PDO("mysql:host=$servidor dbname=$bbdd", $usuario, $clave);
+            //conexión con bbdd
+            $conexion = new PDO("mysql:host=$servidor ; dbname=$bbdd", $usuario, $clave);
             //modo excepción
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Conexión OK";
+            echo "Conexión OK<br>";
 
-            //Cnsulta
+            //Consulta para que no hayan registros repetidos con ayuda del correo ya que es único
             $sql = "SELECT COUNT(*) AS 'cantidad' FROM ALUMNOS WHERE correo='".$_REQUEST['mail']."';";
             $result = $conexion->query($sql);
             $num = $result->fetch();
@@ -60,16 +63,16 @@
 
                 //conculta preparada        
                 $stmt = $conexion->prepare($sql);
-                $stmt->binParam(":nom", $_REQUEST['nombre']);
-                $stmt->binParam(":ape", $_REQUEST['apellidos']);
-                $stmt->binParam(":tel", $_REQUEST['telefono']);
-                $stmt->binParam(":cor", $_REQUEST['mail']);
+                $stmt->bindParam(":nom", $_REQUEST['nombre']);
+                $stmt->bindParam(":ape", $_REQUEST['apellidos']);
+                $stmt->bindParam(":tel", $_REQUEST['telefono']);
+                $stmt->bindParam(":cor", $_REQUEST['mail']);
                 //para cada juego de variables, ejecutar la sentencia preparada
-                $sql->execute();
+                $stmt->execute();
                 echo "Se ha insertado con éxito en alumnos<br/>";
             }
 
-        }catch(PDOexception $e){
+        }catch(PDOException $e){
             echo "Conexión fallida: " . $e->getMessage();
         }
     }
