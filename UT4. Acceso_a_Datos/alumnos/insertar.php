@@ -48,7 +48,7 @@
             $conexion = new PDO("mysql:host=$servidor ; dbname=$bbdd", $usuario, $clave);
             //modo excepción
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Conexión OK<br>";
+            echo "Conexión OK.<br>";
 
             //Consulta para que no hayan registros repetidos con ayuda del correo ya que es único
             $sql = "SELECT COUNT(*) AS 'cantidad' FROM ALUMNOS WHERE correo='".$_REQUEST['mail']."';";

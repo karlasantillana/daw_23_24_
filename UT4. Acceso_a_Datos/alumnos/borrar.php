@@ -38,33 +38,31 @@
                 $conexion= new PDO("mysql:host=$servidor ; dbname=$bbdd", $usuario, $clave);
                 //modo excepción
                 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Conexión OK<br>";
+                echo "Conexión OK.<br>";
 
                 //comprobar q el registro q se va a borrar, existe en la bbdd
-                $sql = "SELECT CODIGO FROM ALUMNOS EHRE codigo=:cod;";
+                $sql = "SELECT CODIGO FROM ALUMNOS WHERE codigo=:cod;";
 
                 //consulta preparada//preparo la consulta
                 $stmt = $conexion->prepare($sql);
                 //utilizo la función intval() para asegurar q se guarda con el tipo de dato definido en el esquema
-                $stmt->bindParam(':cod', intval($_REQUEST['codigo']));
+                $stmt->bindParam(':cod', $_REQUEST['codigo']);
                 //ejecutar variable
                 $stmt->execute();
                 
                 $registros = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 //Comprobar si se han encontrado registros
-                if(count($registros)>0){
-                    echo "<h2>Alumn@s encontrados que contienen el nombre " .$_REQUEST['nombre']. "</h2>";
-                    echo "<ul>";
-                    $sql = "DELETE FROM ALUYMNOS WHERE codigo':cod;'";
+                if($registros>0){
+                    $sql = "DELETE FROM ALUMNOS WHERE codigo=:cod;";
                     $stmt = $conexion->prepare($sql);
-                    $stmt->bindParam(':cod', intval($_REQUEST['codigo']));
+                    $stmt->bindParam(':cod', $_REQUEST['codigo']);
                     $stmt->execute();
 
-                    echo "El alumn@ se ha eliminado correctamente";
+                    echo "El alumn@ se ha eliminado correctamente.";
 
                 }else{
-                    echo "El alumn@ a borrar NO existe en la BD";
+                    echo "El alumn@ a borrar NO existe en la BD.";
                 }
             }catch(PDOExecption $e){
                 echo "Conexión fallida: " .$e->getMessage();

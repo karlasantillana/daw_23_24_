@@ -14,7 +14,7 @@
 </head>
 <body>
     <h1>Buscar alumnos</h1>
-    <p style="color:red;"><?=$msg?></p>
+    <p style="color:red;"><?=$msg?></p> <!--mirar xq? no funciona $msg-->
     <form action="" method="post">
         <fieldset>
             <legend>Datos del alumno a buscar</legend>
@@ -37,11 +37,11 @@
             try{
                 //conexión con bbdd
                 $conexion= new PDO("mysql:host=$servidor ; dbname=$bbdd", $usuario, $clave);
-                //modo excepción
+                //asinar el modo excepción
                 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 echo "Conexión OK<br>";
 
-                //consulta para que se encuentre el nombre en cualuqier parte del nombre
+                //consulta para que se encuentre el nombre en cualuqier parte del nombre del servidor
                 $sql = "SELECT * FROM ALUMNOS WHERE NOMBRE LIKE :nom;";
 
                 //consulta preparada
