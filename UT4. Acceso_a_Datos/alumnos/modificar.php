@@ -58,7 +58,7 @@
                 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 echo "Conexión OK<br>";
 
-                //1ºConsult: para buscar el alumno
+                //Consulta: buscar el alumno por código
                 $sql = "SELECT * FROM ALUMNOS WHERE codigo=:cod;";
                 
                 //consulta preparada
