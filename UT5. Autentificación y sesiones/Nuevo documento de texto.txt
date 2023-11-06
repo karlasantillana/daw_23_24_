@@ -1,0 +1,4 @@
+usar CRIPT 
+https://alexcgdesign.com/blog/crear-un-formulario-de-registro-en-html/
+
+https://www.freecodecamp.org/espanol/news/como-construir-una-forma-de-registro-con-etiquetas-flotantes-y-transiciones-usando-solamente/
