@@ -1,3 +1,7 @@
+descargar Git manual para poder inicializar github en la cmd 
+o
+en la misma cmd:      winget install --id Git.Git -e --source winget
+
 git init (inicia el archivo git) --> crear un repositorio nuevo o reiniciar uno existente
 o
 git clone [url] --> en la máquina donde quiero clonar
