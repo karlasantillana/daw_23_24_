@@ -1,5 +1,5 @@
 <?php
-    $servidor = "localhost:3307"; 
+    $servidor = "localhost:3306"; //puerto cambiado 3307
     $usuario = "root";
     $clave = "";
     $bbdd = "pufosa";

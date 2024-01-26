@@ -40,12 +40,11 @@
         $pass = $_POST["contraseña"];
 
         //consulta
-        $sql = "SELECT FROM empleados WHERE empleado_ID like $user";
+        $sql = "SELECT FROM empleados WHERE empleado_ID like $user"; //usuario
 
         //consulta preparada
         $stmt = $conexion->prepare($sql);
-        
-        // foreach($)
+
     }
 ?>
 </body>
