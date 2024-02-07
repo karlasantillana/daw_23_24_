@@ -37,13 +37,38 @@
     //comprobar que se haya pulsado el botón Entrar
     if(isset($_REQUEST['btnEntrar'])){
         $user = $_POST["empleado_ID"];
-        $pass = $_POST["contraseña"];
+        $contraseña = $_POST["contraseña"];
 
-        //consulta
-        $sql = "SELECT FROM empleados WHERE empleado_ID like $user"; //usuario
+        try{
+            $usuario = "root";
+            $clave = "";
 
-        //consulta preparada
-        $stmt = $conexion->prepare($sql);
+            //consulta
+            $sql = "SELECT FROM empleados WHERE empleado_ID like $user"; //usuario
+            $pass = ""; //////abajo
+            $id; /////abajo
+
+            //consulta preparada
+            // $stmt = $conexion->prepare($sql); //O ->query ?? 
+            $result = $conexion->prepare($sql);
+
+            foreach($result as $fila){
+                $fila['empleado_ID']; 
+                $fila['Inicial_del_segundo_apellido'] //la pass es la inicial del 2º apellido y su empleado_ID
+                $fila['Trabajo_ID'];
+
+                $usuario = $fila['empleado_ID'];
+                $pass = $fila['Inicial_del_segundo_apellido']. $fila['empleado_ID'];
+                $id = $fila['Trabajo_ID'];
+            }
+
+            if($pass == $contraseña){
+                echo "Usuario válido";
+
+                fopen('',)
+            }
+        }
+
 
     }
 ?>
