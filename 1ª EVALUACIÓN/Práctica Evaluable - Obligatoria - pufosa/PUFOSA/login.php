@@ -65,7 +65,7 @@
             if($pass == $contraseña){
                 echo "Usuario válido";
 
-                // fopen('',)
+                fopen('pufosa.txt', 'w+b')
 
                 if($id == 671){
 
