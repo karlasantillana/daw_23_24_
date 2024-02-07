@@ -40,13 +40,10 @@
         $contraseña = $_POST["contraseña"];
 
         try{
-            $usuario = "root";
-            $clave = "";
-
             //consulta
             $sql = "SELECT FROM empleados WHERE empleado_ID like $user"; //usuario
-            $pass = ""; //////abajo
-            $id; /////abajo
+            $pass = ""; 
+            $id; 
 
             //consulta preparada
             // $stmt = $conexion->prepare($sql); //O ->query ?? 
@@ -65,7 +62,7 @@
             if($pass == $contraseña){
                 echo "Usuario válido";
 
-                fopen('pufosa.txt', 'w+b')
+                //fopen('pufosa.txt', 'w+b')
 
                 if($id == 671){
 
