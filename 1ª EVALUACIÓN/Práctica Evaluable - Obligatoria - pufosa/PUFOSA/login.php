@@ -54,8 +54,8 @@
 
             foreach($result as $fila){
                 $fila['empleado_ID']; 
-                $fila['Inicial_del_segundo_apellido'] //la pass es la inicial del 2º apellido y su empleado_ID
-                $fila['Trabajo_ID'];
+                $fila['Inicial_del_segundo_apellido']; //la pass es la inicial del 2º apellido y su empleado_ID
+                $fila['Trabajo_ID']; //función de usuario 671: MANAGER, 672:PRESIDENT
 
                 $usuario = $fila['empleado_ID'];
                 $pass = $fila['Inicial_del_segundo_apellido']. $fila['empleado_ID'];
@@ -65,7 +65,11 @@
             if($pass == $contraseña){
                 echo "Usuario válido";
 
-                fopen('',)
+                // fopen('',)
+
+                if($id == 671){
+
+                }
             }
         }
 
