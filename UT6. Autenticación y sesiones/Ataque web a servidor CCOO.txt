@@ -1,0 +1,6 @@
+En esta carpeta se suben diferentes contenidos sobre seguridad básica en servidores web. 
+
+Adicional, os dejo el detalle de uno de los ataques web al servidor de CCOO que se ha comentado en los medios:
+
+Puedes verlo aquí -> Descripción y detalle del ataque:
+https://farlopa.noblogs.org/mariscada-virtual-en-el-servidor-de-comisiones-obreras/
