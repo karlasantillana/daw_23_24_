@@ -28,7 +28,7 @@
 
     <?php
         if(isset($_REQUEST['btnEnviar'])){
-            $servidor = "localhost:3307"; //como cambié el puerto a 3307, también lo cambio en el nombre
+            $servidor = "localhost:3306"; //como cambié el puerto a 3307, también lo cambio en el nombre
             $usuario = "root";
             $clave = "";
             $bbdd = "alumnos";
@@ -64,9 +64,10 @@
                 }else{
                     echo "El alumn@ a borrar NO existe en la BD.";
                 }
-            }catch(PDOExecption $e){
+            }catch(PDOException $e){
                 echo "Conexión fallida: " .$e->getMessage();
             }
+            $conexion = null;
 
         }else{
             echo "Hay que introducir un código a borrar";

@@ -17,6 +17,8 @@
     <p style="color:red;"><?=$msg?></p>
 
     <?php
+    $datosCorrectos =0;
+
         $html="";
         if(!$datosCorrectos){
             $html="<form action='' method='post'>";
@@ -46,11 +48,12 @@
         $datosCorrectos=false;
 
         if(isset($_REQUEST['codigo'])){
-            $servidor = "localhost:3307"; //como cambié el puerto a 3307, también lo cambio en el nombre servidor
+            $servidor = "localhost:3306"; //como cambié el puerto a 3307, también lo cambio en el nombre servidor
             $usuario = "root";
             $clave = "";
             $bbdd = "alumnos";
 
+            //Comprobar que existe el alumno a modificar
             try{
                 //conexión con bbdd
                 $conexion= new PDO("mysql:host=$servidor ; dbname=$bbdd", $usuario, $clave);
@@ -68,7 +71,7 @@
                 $stmt->execute();
                 $reg = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                //si encuntra el registro, pinta uh form para introducir los nuevos datos
+                //si encuentra el registro, pinta un form para introducir los nuevos datos
                 if($reg<=0){
                     $msg="El alumn@ a modificar NO existe en la BD";
                     $datosCorrectos=false;
@@ -76,8 +79,12 @@
                     $datosCorrectos=true;
                 }
             }catch(PDOException $e){
-                echo "Conexión fallida: " .$e->fetMessage();
+                echo "Conexión fallida: " .$e->getMessage();
             }
+            $conexion = null;
+
+        }else{
+            $msg = "Hay algún error en los dtos a modificar, vuelva a la página principal.";
         }
     ?>
 

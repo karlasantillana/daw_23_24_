@@ -36,7 +36,7 @@
             //*********Conexión a bbdd on Mysql********************* */
 
     //almacenar los 4 datos siempre requeridos para conectar con la bbdd
-    $servidor = "localhost:3307"; //como cambié el puerto a 3307, también lo cambio en el nombre
+    $servidor = "localhost:3306"; //como cambié el puerto a 3307, también lo cambio en el nombre
     $usuario = "root";
     $clave = "";
     $bbdd = "alumnos";
@@ -69,12 +69,14 @@
                 $stmt->bindParam(":cor", $_REQUEST['mail']);
                 //para cada juego de variables, ejecutar la sentencia preparada
                 $stmt->execute();
-                echo "Se ha insertado con éxito en alumnos<br/>";
+                echo "Se ha insertado con éxito en Alumnos<br/>";
             }
 
         }catch(PDOException $e){
             echo "Conexión fallida: " . $e->getMessage();
         }
+
+        $conexion = null;
     }
     
 

@@ -46,8 +46,8 @@
             $id; 
 
             //consulta preparada
-            // $stmt = $conexion->prepare($sql); //O ->query ?? 
-            $result = $conexion->prepare($sql);
+            // $stmt = $conexion->prepare($sql); //o ->query ?? 
+            $result = $conexion->query($sql);
 
             foreach($result as $fila){
                 $fila['empleado_ID']; 
@@ -62,15 +62,22 @@
             if($pass == $contraseña){
                 echo "Usuario válido";
 
-                //fopen('pufosa.txt', 'w+b')
+                fopen('pufosa.txt', 'a+b');
 
                 if($id == 671){
+                    
+
+                }else if($id ==672){
 
                 }
             }
+        }catch(PDOException $e){
+            echo "Conexión fallida: " .$e->getMessage();
         }
+        $conexion = null;
 
-
+    }else{
+        echo "Los datos no son correctos.";
     }
 ?>
 </body>

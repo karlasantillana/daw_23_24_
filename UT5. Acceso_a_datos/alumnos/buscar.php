@@ -14,7 +14,7 @@
 </head>
 <body>
     <h1>Buscar alumnos</h1>
-    <p style="color:red;"><?=$msg?></p> <!--mirar xq? no funciona $msg-->
+    <p style="color:red;"><?=$msg?></p> <!--mirar xq? no funciona $msg si ya lo he inicializado en php-->
     <form action="" method="post">
         <fieldset>
             <legend>Datos del alumno a buscar</legend>
@@ -27,9 +27,9 @@
     <h4><a href="principal.php">VOLVER AL MENÚ CRUD</a></h4>
 
     <?php
-        $msg="";
+    echo $msg="";
         if(isset($_REQUEST['btnEnviar'])){
-            $servidor = "localhost:3307"; //como cambié el puerto a 3307, también lo cambio en el nombre
+            $servidor = "localhost:3306";
             $usuario = "root";
             $clave = "";
             $bbdd = "alumnos";
@@ -39,7 +39,7 @@
                 $conexion= new PDO("mysql:host=$servidor ; dbname=$bbdd", $usuario, $clave);
                 //asinar el modo excepción
                 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Conexión OK<br>";
+                echo "Conexión OK<br />";
 
                 //consulta para que se encuentre el nombre en cualuqier parte del nombre del servidor
                 $sql = "SELECT * FROM ALUMNOS WHERE NOMBRE LIKE :nom;";
@@ -67,9 +67,11 @@
                 }else{
                     $msg="No se ha encontrado ningún alumn@ que contenga " .$_REQUEST['nombre']. "en su nombre";
                 }
-            }catch(PDOExecption $e){
+            }catch(PDOException $e){
                 echo "Conexión fallida: " .$e->getMessage();
             }
+            
+            $conexion = null;
         }
     ?>
 </body>
