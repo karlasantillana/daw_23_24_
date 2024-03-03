@@ -1,36 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pufo SA</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-    </style> -->
-    
+
+    <link rel="stylesheet" href="/pufosaa/styles.css" type="text/css" media=screen>    
 </head>
 
 <body>
-<div class="singinForm">    
-    <form action="" method="post" class="form">
-        <h1 class="title">Iniciar sesión</h1>
+    <div class="inicio_principal">    
+        <form action="" method="post" class="form">
+            <img src="/pufosaa/img/logo1-removebg.png" class="logo">
 
-        <div class="inputContainer">
-            <input type="text" name="empleado_ID" class="input" placeholder="a" REQUIRED>
-            <label for="empleado_ID" class="label"></label>Número de empleado</label>
-            
-        <div class="inputContainer">
-            <input type="text" name="contraseña" class="input" placeholder="a" REQUIRED>
-            <label for="contraseña" class="label"></label>Contraseña</label>            
-        </div>
+            <h1 class="title">Iniciar sesión</h1>
 
-        <input type="submit" name="btnEntrar" value="Entrar">
-        <input type="reset" name="btnReset" value="Borrar">
-    </form>
+            <div class="inputContainer">
+                <input type="text" name="empleado_ID" class="input" placeholder="a" REQUIRED>
+                <label for="empleado_ID" class="label">Número de empleado</label>
+            </div>
 
-</div>    
+            <div class="inputContainer">
+                <input type="text" name="contraseña" class="input" placeholder="a" REQUIRED>
+                <label for="contraseña" class="label">Contraseña</label>            
+            </div>
+
+            <div class="botones">
+                <input type="submit" class="boton" name="btnEntrar" value="Entrar">
+                <input type="reset" class="boton borrar" name="btnReset" value="Borrar">
+            </div>
+        </form>
+
+    </div>    
+</body>
+</html>
+
 <?php
     require "conexionBBDDPufosa.php";
     
@@ -51,7 +56,7 @@
 
             foreach($result as $fila){
                 $fila['empleado_ID']; 
-                $fila['Inicial_del_segundo_apellido']; //la pass es la inicial del 2º apellido y su empleado_ID
+                $fila['Inicial_del_segundo_apellido']; //la pass es la inicial del 2º apellido en mayúscula y su empleado_ID
                 $fila['Trabajo_ID']; //función de usuario 671: MANAGER, 672:PRESIDENT
 
                 $usuario = $fila['empleado_ID'];
@@ -80,6 +85,5 @@
         echo "Los datos no son correctos.";
     }
 ?>
-</body>
-</html>
+
 

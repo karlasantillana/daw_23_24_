@@ -2,15 +2,15 @@
     //*********Conexión a bbdd on Mysql********************* */
 
     //almacenar los 4 datos siempre requeridos para conectar con la bbdd
-    $servidor = "localhost:3307"; //como cambié el puerto a 3307, también lo cambio en el nombre
+    $servidor = "localhost:3306"; //como cambié el puerto a 3307, también lo cambio en el nombre
+    $bbdd = "alumnos";
     $usuario = "root";
     $clave = "";
-    $bbdd = "alumnos";
 
     try{
         //CONECTAR CON BBDD
         $conexion = new PDO("mysql:host=$servidor ; dbname=$bbdd", $usuario, $clave);
-        //Asigar modo excepción
+        //Asignar modo excepción
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Conexión OK";
 
