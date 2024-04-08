@@ -1,0 +1,10 @@
+Utilizando el array del documento "ARRAY MULTIDIMENSIONALES", ubicando en la "UT2. Iniciación a PHP" dentro de la carpeta "Material adicional arrays", completa los siguientes ejercicios: 
+
+1.Mostrar el valor del campo 'Resultado' para Mosconia vs Cánicas
+2.Mostrar todos los resultados de cada equipo donde el número de amarillas > 1
+3.Mostrar todos los resultados sumarizados por equipo dónde el total de amarillas >= 3
+4.Mostrar en formato tabla y ordenado por resultado. Se filtrará previamente por el equipo para mostrar los resultados. El filtro incluirá el listado de equipos incluidos dentro del array.
+5.Calcula una password basándote en los siguientes criterio para obtenerla: 
+    -matriz 4x5
+    -genera letras aleatorias
+    -selecciona la posición 3 dentro del array siguiendo un orden por fila.
