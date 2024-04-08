@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    background-image: url(/pufosa/imagen/fondo_amarillo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Login*/
+.inicio_principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form{
+    background-color: white;
+    width: 250px;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2); /*horizontal vertical borroso*/
+}
+
+.title{
+    font-size: 38px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.inputContainer{
+    position: relative;
+    height: 45px;
+    width: 85%;
+    margin-bottom: 17px;
+}
+
+.input{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+}
+
+::placeholder {
+    color: transparent;
+}
+
+.label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 0 4px;
+    background-color: white;
+    color: #DADCE0;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+}
+
+/*Botones*/
+.botones{
+    display:flex;
+    margin-top:15px;
+    justify-content: center; /*centrar botones*/
+}
+
+.boton{
+    justify-content: center;
+    padding: 15px 30px;
+    border: none;
+    background-color: rgb(214, 154, 1);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.boton.borrar{
+    display: flex;
+    margin-left: 20px;
+}
+
+.boton:hover{
+    background-color: #ffabab;
+    transform: translateY(-2px); /*mueve el botón un poco hacia arriba (eje Y) al pasar por encima */
+}
+/********/
+
+/*movilizar label hacia arriba*/
+.input:focus + .label{
+    top: -7px;
+    left: 3px;
+    z-index: 3;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffabab;
+}
+
+.input:focus{
+    border: 2px solid #ffabab;
+}
+
+/**Para no sobreponer el el texto del label sobre el texto de la la entrada(el que he introducido)**/
+/***al clicar fuera, label permanezca flotante arriba si hay texto dentro del input***/
+.input:not(:placeholder-shown) + .label{ /*todas las clases label después de la clase input*/
+    top: -7px;
+    left: 3px;
+    z-index: 3;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.logo{
+    width: 200px;
+    margin-left: 27px;
+}
+/*********************************************/

@@ -1,0 +1,11 @@
+Examen 1ª Evaluación
+
+Apertura: viernes, 18 de noviembre de 2022, 00:00
+Cierre: viernes, 18 de noviembre de 2022, 13:30
+-------------------------------------------------------------------------------------
+
+Se entregará una carpeta comprimida con los ficheros generados en los ejercicios.
+
+Cada ejercicio debe estar contenido en una carpeta con su número.
+
+El formato de la carpeta será:  DWES_181122_NombreApellido_2DAW.zip

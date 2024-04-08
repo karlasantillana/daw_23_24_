@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor moneda</title>
+</head>
+<body>
+    <h1>Conversor moneda</h1>
+    
+    <form action="conversor_moneda.php" method="post" name="datos" id="datos">
+
+        <label for="euros">Euros</label>
+        <input type="text" name="euros" id="euros">
+
+        <select name="tipo_moneda" id="tipo_moneda">
+            <option value="bitcoin">Bitcoin</option>
+            <option value="dolar">Dólar americano</option>
+            <option value="libra">Libra esterlina</option>
+            <option value="yen">Yen japonés</option>
+        </select>
+
+        <input type="submit" name="enviando" id="enviando" value="Enviar">
+    </form>
+</body>
+</html>

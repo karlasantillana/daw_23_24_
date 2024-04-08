@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        form{
+            width:30%;
+        }
+    </style>
+</head>
+
+<body>   
+    <h1>Alta de Alumnos</h1>
+
+    <form action="bbdd.php" method="post">
+        <fieldset>
+            <legend>Datos del alumno</legend>
+            Nombre del alumno:
+            <input type="text" name="nombre" required><br><br/> <!--required: no puede quedar en blanco-->
+
+            Apellidos del alumno: 
+            <input type="text" name="apellidos" required><br><br/>
+
+            Teléfono: 
+            <input type="text" name="telefono" required><br><br/>
+
+            mail de contacto: 
+            <input type="text" name="mail" required><br><br/>
+            <input type="submit" name="botonEnviar" value="Dar de alta">
+        </fieldset>
+
+    </form>
+</body>
+
+</html>

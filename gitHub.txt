@@ -1,0 +1,27 @@
+descargar Git con browser para poder inicializar github en la cmd 
+o
+en con code en la misma cmd:      winget install --id Git.Git -e --source winget
+
+git init (inicia el archivo git) --> crear un repositorio nuevo o reiniciar uno existente
+o
+git clone [url] --> en la máquina donde quiero clonar
+
+
+//En la máquina donde quiero subir los cambios
+--> git status
+--> git add . (selecciona todos los archivos que hayan cambiado)
+--> git commit -m "Primera subida" guarda la seleccion
+--> git push --> actualizar cambios (si es el primer push --set-upstream [url])
+
+
+//en la máquina donde quiero actualizar
+--> git pull -->lo abro en la consola directamente en la carpeta de la máquina donde falta actualizar
+
+CARPETA PERSONAL:
+https://github.com/karlasantillana/daw.git
+
+CARPETA CLASE:
+https://github.com/karlasantillana/daw_23_24_.git
+
+configuracion maquinas virtuales:
+video: https://youtu.be/vDcNNok5-sA

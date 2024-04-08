@@ -1,0 +1,151 @@
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+p{
+    font-family: 'Nunito', sans-serif;
+}
+
+.cabecera{
+    background: url(imagenes/logo/logo-removebg-preview.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    left: 0;
+    padding-bottom:600px;
+    background-color:#f8dcf6;
+    padding-top: 50px;
+}
+
+.logo{
+    margin-top:-10px;
+}
+
+.menu{
+    position:fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    background-color: rgb(255, 255, 255); 
+    font-size: 1.6rem;
+    border-spacing: 25px 5px;
+    height: 80px;
+    padding-top: 10;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: #874c2c;
+    font-size: 20px;
+}
+
+a{
+    cursor: pointer
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none
+}
+
+li{
+    margin:0px 20px;
+    color: #874c2c;
+    font-weight: bold;
+}
+
+a:link {color:#874c2c;
+    text-decoration: none;
+}
+
+a:hover{
+    color:#ad4da8
+}
+
+a:active {color:#ad4da8
+}
+
+
+.container-mugs{
+    /* display:flex; */
+    align-items: stretch;
+    background: url(imagenes/mugs/taza1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    margin:120px;
+    font-size: 1.2rem;
+}
+
+.container-plates{
+    align-items: stretch;
+    background: url(imagenes/plates/plate1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    margin:120px;
+    font-size: 1.2rem;
+}
+
+.container-visitanos{
+    display:flex;
+    justify-content: center;
+    background-color:#f8dcf6;
+    min-height: 100px; /*al*/
+    font-size: 1.5rem;
+}
+
+.container-footer{
+    display:flex;
+    align-items: baseline;
+    justify-content: space-between;
+    min-height: 100px;
+    background-color:#f8dcf6;
+}
+
+
+.centro{
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+    background-color:#f8dcf6;
+    margin:20px;
+    padding-top: 50px;
+    min-height: 200px;
+}
+
+.flowers-imagenes{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+.flowers{
+    height: 400px;
+    width: 400px;
+}
+
+.tabla{
+    background: url(imagenes/mugs/taza1.jpg) no-repeat center/100%;
+    margin:40px;
+    font-size: 20px;
+    font-weight: bold;
+    font: 20px;
+    background-size: cover;
+    /* border: 3px solid gray; */
+
+}
+
+td{ 
+    padding: 10px;
+    /* border: solid trasp 2px; */ 
+}

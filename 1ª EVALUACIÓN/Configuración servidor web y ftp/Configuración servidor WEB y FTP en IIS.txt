@@ -1,0 +1,50 @@
+Configuración servidor WEB y FTP en IIS
+
+Apertura: miércoles, 14 de septiembre de 2022, 08:00
+------------------------------------------------------------------------------------------------------------------------
+
+Con el objetivo de consolidar los contenidos aprendidos en la unidad simularemos una arquitectura cliente-servidor que devuelva el contenido de una página web sencilla. Para ello será necesario completar los siguientes pasos:
+
+
+1.Instalación de máquina virtual con sistema operativo W10 Pro. Instalación de IIS y creación de un sitio web y ftp. (3 puntos)
+
+2.Realización de una página personal utilizando HTML5 y CSS. Subiremos esta página web personal al sitio web creado. (2 puntos)
+
+3.Conectar un cliente en red y poner ambos en red interna. Validar que el servidor funciona correctamente realizando una consulta a la web subida en nuestro sitio web desde el cliente. (3-4 puntos)*
+
+4.Utilizar filezilla para incluir alguna modificación en nuestro html en el cliente y ver que se ve reflejado en el servidor. (1 punto)
+
+
+*En el apartado 3 se valorará con 1punto adicional el modificar el fichero host para no tener que acceder indicando la IP (0,5p) y realizar la conexión desde un cliente con SO operativo libre y propietario, con los 2 (0,5).
+
+
+No es necesario documentar el paso a paso de la práctica, en la entrega se deberá adjuntar:
+
+
+-Documento PDF que incluya pantallazos que evidencien el funcionamiento solicitado. En los casos en los que se pide que se acceda desde el cliente es importante que sea visible la máquina desde donde estamos realizando el pantallazo.
+
+-HTML realizado por el alumno, deberá incluir como mínimo:
+
+           - Estructura con encabezado, cuerpo y pie bien delimitados.
+
+           - Menú con al menos 3 pestañas que llevan a otra web con hipervínculo, al menos 2 de ellos deben de llevar a otro .html en la estructura de carpetas.
+
+           - Incluir una tabla y una imagen
+
+           - Trabajar con diferentes estilos para encabezados y textos.
+
+
+Adicional el profesor puede solicitar ver la práctica en funcionamiento para validar la ejecución de la misma.
+
+
+El material de apoyo con el que cuenta el alumno para realizar las prácticas:
+
+
+T1. Configuración servidor WEB y FTP en IIS
+
+T1a. Configuración de Red W10
+
+T1b. Chuleta CSS/HTML
+
+
+Fecha máxima de entrega: 30 de septiembre

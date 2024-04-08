@@ -1,0 +1,12 @@
+https://diego.com.es/tutorial-de-pdo
+
+Gracias Adri, esta muy bien el enlace para entender la parte de PDO.  
+Os dejo también el enlace con la diferencia que os mostré en clase:
+https://es.stackoverflow.com/questions/59971/php-cu%C3%A1l-es-la-diferencia-entre-bindparam-y-bindvalue-en-pdo/59972
+
+Para lo que hayan tenido problemas en xampp con MySQL y hayan tenido que cambiar el puerto para poder acceder a la BBDD, ya he solucionado el problema. No puedo subir una captura de pantalla pero bueno, es en el objeto de la conexión (new PDO) ,en el constructor hay que meter también el puerto en el que se escucha, así: 
+
+$conexion = new PDO("mysql:host = $servername; port=3307; dbname=mybdpdo", $username, $password); 
+
+Y así debería funcionar.
+

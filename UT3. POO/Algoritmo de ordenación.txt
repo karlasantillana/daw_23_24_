@@ -1,0 +1,5 @@
+BubbleSort -> https://runestone.academy/runestone/static/pythoned/SortSearch/ElOrdenamientoBurbuja.html
+
+Selección ->   https://runestone.academy/runestone/static/pythoned/SortSearch/ElOrdenamientoPorSeleccion.html
+Inserción ->    https://runestone.academy/runestone/static/pythoned/SortSearch/ElOrdenamientoPorInsercion.html
+QuickSort ->   https://runestone.academy/runestone/static/pythoned/SortSearch/ElOrdenamientoRapido.html

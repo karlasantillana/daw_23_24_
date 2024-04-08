@@ -1,0 +1,9 @@
+La clase abstracta no se puede hererdar.
+La clase abstracta debe tener al menos un método abstracto:
+Es decir, define padre, implementa hijas.
+
+funal no= abstract class Persona{  no= (se refiere al signo DIFERENTE)
+    clase-> no hereda
+    métodos-> no sobrescribe
+}
+

@@ -1,0 +1,9 @@
+Simulacro 14/02/23
+
+Apertura: martes, 14 de febrero de 2023, 00:00
+Cierre: martes, 14 de febrero de 2023, 15:00
+-------------------------------------------------------------------------------------------------------------------------
+
+Implementa un servicio REST basándote en la base de datos de Inmobiliaria que devuelva todos los inmuebles que se encuentran en una determinada zona en formato JSON. 
+
+Crear un HTML que incluya un formulario con un desplegable de las zona que se desean mostrar. El usuario seleccionará una zona y se enviará la información al servidor. El servidor debe mostrar el resultado de los inmuebles encontrados en formato lista, manteniendo en la parte superior el formulario desplegable para modificar la selección todas las veces que se necesite.
