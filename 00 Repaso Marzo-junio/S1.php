@@ -201,16 +201,9 @@ foreach($b as $equipoCasa => $partidos){
     if($totalAmarillasEquipo >=3){
         
         $resultadosSumarizados[$equipoCasa] = array(
-            //creo array asociativo para almacenar la info por equipos
+            //creo array para almacenar la info por equipo
             'Total Amarillas'=> $totalAmarillasEquipo,
-            'Resultados' =>array()
         );
-
-        //resultados de c/partido del equipo
-        foreach($partidos as $equipoVisitante => $partidoInfo){
-            $resultado = $partidoInfo['Resultado'];
-            $resultadosSumarizados[$equipoCasa]['Resultados'][$equipoVisitante]=$resultado;
-        }
     }
 }
 
@@ -218,75 +211,30 @@ foreach($b as $equipoCasa => $partidos){
 foreach($resultadosSumarizados as $equipo => $equipoInfo){
     echo "<b>Equipo: $equipo</b><br>";
     echo "Total tarjetas Amarillas: " . $equipoInfo['Total Amarillas'] . "<br>";
-    
-    echo "Resultados: <br>";
-    foreach($equipoInfo['Resultados'] as $equipoVisitante=>$resultado){
-        echo " VS $equipoVisitante: $resultado<br>";
-    }
-    echo "<br>";
 }
 
 echo "<b>El equipo Piloñesa no tuvo 3 o más tarjetas amarillas.</b><br>";
 
 
 ///4
-
-/*
 echo "<br><br>4. Mostrar en formato tabla y ordenado por resultado. 
 Se filtrará previamente por el equipo para mostrar los resultados. 
 El filtro incluirá el listado de equipos incluidos dentro del array.<br><br>";
 
-//Equipo a filtrar
-$equipoFiltrar = "Mosconia";
+//equipo parta filtrar (si no hay form select)
+$equipoFiltrar = "Juvencia";
 
-// Función para comparar resultados y ordenarlos
-function compararResultados($a, $b) {
-    // Si ambos resultados están vacíos, son iguales
-    if ($a['Resultado'] == "" && $b['Resultado'] == "") {
-        return 0;
+//entro a 'Resultado' de cada partido por equipo
+$equipoCasaPrimerNum = array();
+
+foreach($b as $equipoCasa => $partidos){
+    foreach($partidos as $equipoVisitante => $partidoInfo){
+        strpos($partidoInfo ['Resultado']); 
+        $equipoCasaPrimerNum[]= ;
     }
-    // Si $a está vacío, se considera menor
-    if ($a['Resultado'] == "") {
-        return 1;
-    }
-    // Si $b está vacío, se considera mayor
-    if ($b['Resultado'] == "") {
-        return -1;
-    }
-    // Comparo los resultados numéricamente
-    return strcmp($a['Resultado'], $b['Resultado']);
 }
 
-//Función para mostrar los resultados en formato de tabla
-function mostrarResultadosEnTabla($resultados) {
-    echo "<table border='1'>";
-    echo "<tr><th>Equipo Casa</th><th>Equipo Visitante</th><th>Resultado</th><th>Amarillas</th><th>Rojas</th><th>Penalty</th></tr>";
-    foreach ($resultados as $equipoCasa => $partidos) {
-        foreach ($partidos as $equipoVisitante => $partidoInfo) {
-            echo "<tr>";
-            echo "<td>$equipoCasa</td>";
-            echo "<td>$equipoVisitante</td>";
-            echo "<td>{$partidoInfo['Resultado']}</td>";
-            echo "<td>{$partidoInfo['Amarillas']}</td>";
-            echo "<td>{$partidoInfo['Rojas']}</td>";
-            echo "<td>{$partidoInfo['Penalty']}</td>";
-            echo "</tr>";
-        }
-    }
-    echo "</table>";
-}
 
-//Filtrar los resultados para el equipo específico
-$resultadosFiltrados = $b[$equipoFiltrar];
-
-//Ordenar los resultados por resultado del partido
-uasort($resultadosFiltrados, 'compararResultados');
-
-//Mostrar los resultados en formato de tabla
-echo "<h3>Resultados para el equipo $equipoFiltrar</h3>";
-mostrarResultadosEnTabla($resultadosFiltrados);
-
-*/
 
 
 ///5
@@ -312,6 +260,9 @@ for($i=0 ; $i<4 ; $i++){
     }
     $matriz[] = $fila;
 }
+echo "<pre>";
+print_r ($matriz);
+echo "</pre>";
 
 //letra posición 3 de c/fila
 $password = "";
